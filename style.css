@@ -1,0 +1,36 @@
+.h2 {
+	text-align: center;
+}
+
+.courses {
+	display: flex;
+}
+
+.courses>* {
+margin-left: 5px;
+margin-left: 5px;
+}
+
+.card-body {
+	text-align: center;
+	font-size: 20px;
+	font-weight: 680;
+	font-family:'Times New Roman', Times, serif;
+	/* color: rgb(77, 2, 2); */
+}
+
+
+#setSel {
+	background-color: rgba(22, 149, 233, 0.199);
+}
+
+#getSel {
+	background-color: rgba(113, 211, 21, 0.418);
+}
+.card-item-value.top {
+	color: rgba(255, 0, 0, 0.801);
+}
+
+.card-item-value.bottom {
+	color: rgba(0, 128, 0, 0.829)
+}
