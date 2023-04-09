@@ -21,23 +21,23 @@ const render = (data) => {
 	}
 }
 setInput.addEventListener('input', () => {
-		if(selectSet.value === 'RUB') {
-			console.log(selectSet.value === 'RUB');
-			getInput.value = (parseFloat(setInput.value) / coursValute[selectGet.value].Value).toFixed(2)
-		}else if(selectSet.value === selectGet.value ) {
-			getInput.value = (parseFloat(setInput.value))
-		}
-		else {
-			console.log(selectSet.value !== 'RUB');
-			getInput.value = (parseFloat(setInput.value) * coursValute.USD.Value).toFixed(2)
-		}
+	if (selectSet.value === 'RUB') {
+		console.log(selectSet.value === 'RUB');
+		getInput.value = (parseFloat(setInput.value) / coursValute[selectGet.value].Value).toFixed(2)
+	} else if (selectSet.value === selectGet.value) {
+		getInput.value = (parseFloat(setInput.value))
+	}
+	else {
+		console.log(selectSet.value !== 'RUB');
+		getInput.value = (parseFloat(setInput.value) * coursValute.USD.Value).toFixed(2)
+	}
 })
 
 selectSet.addEventListener('input', () => {
-	if(selectSet.value === 'RUB') {
+	if (selectSet.value === 'RUB') {
 		console.log(selectSet.value === 'RUB');
 		getInput.value = (parseFloat(setInput.value) / coursValute[selectGet.value].Value).toFixed(2)
-	}else if(selectSet.value === selectGet.value ) {
+	} else if (selectSet.value === selectGet.value) {
 		getInput.value = (parseFloat(setInput.value))
 	}
 	else {
@@ -47,10 +47,10 @@ selectSet.addEventListener('input', () => {
 })
 
 getInput.addEventListener('input', () => {
-	if(selectGet.value === 'RUB') {
+	if (selectGet.value === 'RUB') {
 		console.log(selectGet.value === 'RUB');
 		setInput.value = (parseFloat(getInput.value) / coursValute[selectSet.value].Value).toFixed(2)
-	}else if(selectSet.value === selectGet.value ) {
+	} else if (selectSet.value === selectGet.value) {
 		setInput.value = (parseFloat(getInput.value))
 	}
 	else {
@@ -60,10 +60,10 @@ getInput.addEventListener('input', () => {
 })
 
 selectGet.addEventListener('input', () => {
-	if(selectGet.value === 'RUB') {
+	if (selectGet.value === 'RUB') {
 		console.log(selectGet.value === 'RUB');
 		setInput.value = (parseFloat(getInput.value) / coursValute[selectSet.value].Value).toFixed(2)
-	}else if(selectSet.value === selectGet.value ) {
+	} else if (selectSet.value === selectGet.value) {
 		setInput.value = (parseFloat(getInput.value))
 	}
 	else {
@@ -71,9 +71,6 @@ selectGet.addEventListener('input', () => {
 		setInput.value = (parseFloat(getInput.value) * coursValute.USD.Value).toFixed(2)
 	}
 })
-
-
-
 
 const getData = async (url) => {
 	const resValutes = await fetch(url)
@@ -88,18 +85,3 @@ getData('https://www.cbr-xml-daily.ru/daily_json.js')
 	.then(data => render(data))
 	.catch(error => console.log(error))
 
-
-
-// var myHeaders = new Headers();
-// myHeaders.append("apikey", "ylFwxQG7aBI4o3ysbT3MWrr5qdHSygQx");
-
-// var requestOptions = {
-//   method: 'GET',
-//   redirect: 'follow',
-//   headers: myHeaders
-// };
-
-// fetch("https://api.apilayer.com/currency_data/live?source=USD&currencies=EUR%2CRUB", requestOptions)
-//   .then(response => response.text())
-//   .then(result => console.log(result))
-//   .catch(error => console.log('error', error));
